@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var bookController = require("../controllers/book-controller.js");
+var bookController = require("../Controllers/bookController")
 
 
 router.get("/books", bookController.getAllBooks);
