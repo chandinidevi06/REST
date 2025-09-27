@@ -9,7 +9,7 @@ var app=express()
 
 connectToDataBase()
 
-app.use(express.json)
+app.use(express.json())
 app.use("/api/books",bookRoute)
 var PORT=process.env.PORT || 3000
 

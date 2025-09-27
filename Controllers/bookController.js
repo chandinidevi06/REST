@@ -1,3 +1,4 @@
+
 var books=require("../model/books")
 var getAllBooks=async(req,res)=>{
      var allBooks=await books.find()
@@ -11,10 +12,11 @@ var getSingleBook=async(req,res)=>{
 }
 var addBook=async(req,res)=>{
      var formData=req.body
-     var newBook=await books.create(FormData)
+     var newBook=await books.create(formData)
      if(newBook){
          res.status(201).json(newBook)
      }
+     
 }
 var updateBook=async(req,res)=>{
     
