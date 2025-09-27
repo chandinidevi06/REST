@@ -3,6 +3,6 @@ var bookSchema=new mongoose.Schema({
     title:String,
     price:Number,
     author:String,
-    isActive:Boolean
+    isActive:Boolean,
 })
 module.exports=mongoose.model("books",bookSchema)

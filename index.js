@@ -11,14 +11,10 @@ connectToDataBase()
 
 app.use(express.json)
 app.use("/api/books",bookRoute)
-
 var PORT=process.env.PORT || 3000
 
 app.listen(PORT,()=>{
-    console.log("the server is running")
+    console.log("the server is running") 
 })
-
-
-
 
 

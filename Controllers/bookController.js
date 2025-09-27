@@ -20,7 +20,7 @@ var updateBook=async(req,res)=>{
     
     var bookId=req.params.id
     var updateBook=req.body
-    var updateBook=await Books.findIdandUpdate(bookId,updateData)
+    var updateBook=await books.findIdandUpdate(bookId,updateData)
     if(updateBook){
         res.status(200).json(updateBook)
     }else{
@@ -29,9 +29,9 @@ var updateBook=async(req,res)=>{
 }
 var DeleteBook=async (req,res)=>{
     var bookId=req.params.id
-    var DeleteBook=await Books.findIdandDelete(bookId)
-    if(deleteBook){
-        res.status(200).json(deleteBook)
+    var DeleteBook=await books.findIdandDelete(bookId)
+    if(DeleteBook){
+        res.status(200).json(DeleteBook)
     }else{
         res.status(404).json({message: "cannot delete"})
     }
