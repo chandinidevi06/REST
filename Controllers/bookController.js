@@ -22,16 +22,16 @@ var updateBook=async(req,res)=>{
     
     var bookId=req.params.id
     var updateData=req.body
-    var updateBoook=await books.findIdandUpdate(bookId,updateData)
+    var updateBoook=await books.findByIdAndUpdate(bookId,updateData)
     if(updateBoook){
-        res.status(200).json(updateBook)
+        res.status(200).json(updateBoook)
     }else{
         res.status(404).json({message :"cannot update"})
     }
 }
 var DeleteBook=async (req,res)=>{
     var bookId=req.params.id
-    var DeleteBook=await books.findIdandDelete(bookId)
+    var DeleteBook=await books.findByIdAndDelete(bookId)
     if(DeleteBook){
         res.status(200).json(DeleteBook)
     }else{
