@@ -40,7 +40,7 @@ var updateProduct = async (req, res) => {
     try {
         var productId = req.params.id;
         var updateData = req.body;
-        var updatedProduct = await products.findByIdAndUpdate(productId, updateData);
+        var updatedProduct = await products.findByIdAndUpdate(productId, updateData, { new: true });
         if (!updatedProduct) {
             return res.status(404).json({ message: "Product not found for update" });
         }
@@ -55,7 +55,7 @@ var deleteProduct = async (req, res) => {
     try {
         var productId = req.params.id;
         var deletedProduct = await products.findByIdAndDelete(productId);
-        if (deletedProduct) {
+        if (!deletedProduct) {
             return res.status(404).json({ message: "Product not found" });
         }
         res.status(200).json(deletedProduct);

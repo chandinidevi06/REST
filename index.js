@@ -10,7 +10,8 @@ connectToDatabase();
 
 app.use(cors());
 app.use(express.json());
-app.use("/api/products", productRoutes); 
+app.use("/api/products", productRoutes);
+
 
 var PORT = process.env.PORT || 3000;
 
