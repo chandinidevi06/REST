@@ -5,12 +5,14 @@ require("dotenv").config();
 var connectToDatabase = require("./database/db");
 
 var productRoutes = require("./Routes/productRoutes"); 
+var BookRoute=require("./Routes/bookRoutes")
 
 connectToDatabase();
 
 app.use(cors());
 app.use(express.json());
 app.use("/api/products", productRoutes);
+app.use("/api/books",BookRoute)
 
 
 var PORT = process.env.PORT || 3000;
